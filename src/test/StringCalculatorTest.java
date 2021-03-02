@@ -23,4 +23,9 @@ public class StringCalculatorTest {
     public void oneNumberShouldReturnItseft() {
         assertEquals(3, calculator.add("3"));
     }
+
+    @Test
+    public void twoNumbersShouldBeAdded() {
+        assertEquals(7, calculator.add("2,5"));
+    }
 }
