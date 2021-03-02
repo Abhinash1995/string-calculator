@@ -53,4 +53,10 @@ public class StringCalculatorTest {
         calculator.add("-5");
         calculator.add("-8,10\n-25");
     }
+
+    @Test
+    public void numbersGreaterThan1000AreIgnored() {
+        assertEquals(calculator.add("5,15,1001"), 20);
+        assertEquals(calculator.add("1456,25\n5,2101"), 30);
+    }
 }
