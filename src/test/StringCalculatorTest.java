@@ -18,4 +18,9 @@ public class StringCalculatorTest {
     public void emptyStringShouldReturn0() {
         assertEquals(calculator.add(""), 0);
     }
+
+    @Test
+    public void oneNumberShouldReturnItseft() {
+        assertEquals(3, calculator.add("3"));
+    }
 }
