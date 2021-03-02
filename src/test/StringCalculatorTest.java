@@ -2,12 +2,17 @@ package test;
 
 import main.StringCalculator;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import org.junit.rules.ExpectedException;
 
 public class StringCalculatorTest {
 
     private StringCalculator calculator;
+
+    @Rule
+    public ExpectedException thrown = ExpectedException.none();
 
     @Before
     public void initialize() {
@@ -39,5 +44,13 @@ public class StringCalculatorTest {
     public void threeNumberWithDifferentDelimitedToBeSummed() {
         assertEquals(calculator.add("3,4,5"), 12);
         assertEquals(calculator.add("1\n2\n3"), 6);
+    }
+
+    @Test
+    public void negativeInputReturnsException() {
+        thrown.expect(IllegalArgumentException.class);
+        thrown.expectMessage("Negative input!");
+        calculator.add("-5");
+        calculator.add("-8,10\n-25");
     }
 }
