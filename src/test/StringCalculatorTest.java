@@ -28,4 +28,10 @@ public class StringCalculatorTest {
     public void twoNumbersShouldBeAdded() {
         assertEquals(7, calculator.add("2,5"));
     }
+
+    @Test
+    public void numbersNewlineDelimitedShouldBeSummed() {
+        assertEquals(calculator.add("5\n3"), 8);
+        assertEquals(calculator.add("21\n23"), 44);
+    }
 }
