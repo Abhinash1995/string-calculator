@@ -34,4 +34,10 @@ public class StringCalculatorTest {
         assertEquals(calculator.add("5\n3"), 8);
         assertEquals(calculator.add("21\n23"), 44);
     }
+
+    @Test
+    public void threeNumberWithDifferentDelimitedToBeSummed() {
+        assertEquals(calculator.add("3,4,5"), 12);
+        assertEquals(calculator.add("1\n2\n3"), 6);
+    }
 }
